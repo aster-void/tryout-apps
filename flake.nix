@@ -25,6 +25,8 @@
       devShells.default = pkgs.mkShell {
         packages = with pkgs; [
           (rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
+          trunk
+          just
         ];
       };
     });
