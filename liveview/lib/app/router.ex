@@ -16,11 +16,6 @@ defmodule App.Router do
 
   scope "/", App do
     pipe_through(:browser)
-
-    get("/template", TemplateController, :home)
-    # get("/", HomeController, :index)
-    get("/hello", HomeController, :hello)
-    get("/hello/:name", HomeController, :hello)
     live("/", ChatLive)
   end
 end

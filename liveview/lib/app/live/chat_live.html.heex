@@ -1,7 +1,7 @@
 <ul class="ml-4 mb-4 chat flex flex-col gap-4">
-  <%= for item <- Enum.reverse(@messages) do %>
+  <%= for message <- Enum.reverse(@messages) do %>
     <li class="flex flex-row chat-bubble chat-start">
-      <span>{item.message}</span>
+      <span>{message}</span>
     </li>
   <% end %>
 </ul>
