@@ -6,12 +6,15 @@
     flake-utils.url = "github:numtide/flake-utils";
     rust-overlay.url = "github:oxalica/rust-overlay";
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+    bunnix.url = "github:aster-void/bunnix";
+    bunnix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     nixpkgs,
     rust-overlay,
     flake-utils,
+    bunnix,
     ...
   }:
     flake-utils.lib.eachDefaultSystem (system: let
@@ -27,6 +30,7 @@
           (rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
           trunk
           just
+          (bunnix.lib.${system}.fromBunVersionFile ./.bun-version)
         ];
       };
     });
