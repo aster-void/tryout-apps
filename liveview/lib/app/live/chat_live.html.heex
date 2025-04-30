@@ -1,0 +1,13 @@
+<ul class="ml-4 mb-4 chat flex flex-col gap-4">
+  <%= for item <- Enum.reverse(@messages) do %>
+    <li class="flex flex-row chat-bubble chat-start">
+      <span>{item.message}</span>
+    </li>
+  <% end %>
+</ul>
+<form phx-submit="post-message">
+  <input name="message" class="input input-bordered" />
+  <button class="btn btn-primary">
+    Post
+  </button>
+</form>
