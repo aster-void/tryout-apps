@@ -1,0 +1,16 @@
+{
+  "name": "^server",
+  "version": "0.0.0",
+  "module": "index.js",
+  "scripts": {
+    "dev": "IDLE_TIMEOUT=0 bun run --watch index.ts"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.2.0",
+    "^share": "workspace:share",
+    "elysia": "^1.2.25"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.11"
+  }
+}

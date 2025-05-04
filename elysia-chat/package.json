@@ -1,0 +1,23 @@
+{
+  "name": "elysia-chat",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "share"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "fix": "bun biome check --fix",
+    "dev": "bun --filter=* dev",
+    "prepare": "bun sync",
+    "sync": "bun --filter=^client sync"
+  }
+}
